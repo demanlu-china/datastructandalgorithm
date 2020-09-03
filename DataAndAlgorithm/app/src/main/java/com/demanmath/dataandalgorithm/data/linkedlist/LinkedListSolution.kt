@@ -89,4 +89,11 @@ class LinkedListSolution:ISolutionInterface {
             return null
         }
     }
+
+    /**
+     * 快慢指针法，1个慢指针，一个快指针，如果在移动过程中2者想叫，则存在环。
+     */
+    private  fun <T> checkCycle(header:Node<T>?){
+
+    }
 }
