@@ -20,11 +20,11 @@ class LinkedListSolution:ISolutionInterface {
 //        linkedList.addNode(5)
 //        reverseLinkedList(linkedList)
 
-        val nodeHead = Node(1)
+        val nodeHead = ListNode(1)
         var i = 2
         var temp = nodeHead
         while(i<6){
-            var e = Node(i)
+            var e = ListNode(i)
             temp.next = e
             e.next = null
             temp = e
@@ -40,9 +40,9 @@ class LinkedListSolution:ISolutionInterface {
          TraceLog.i(list.dumpList())
          /*方法一，用stack的特性，存储链表的数据，然后反转*/
          var stack = Stack<T>()
-         var temp:Node<T>? = list.header.next
+         var temp:ListNode<T>? = list.header.next
          while(temp!=null){
-             stack.push(temp.value)
+             stack.push(temp.`val`)
              temp = temp.next
          }
 
@@ -55,7 +55,7 @@ class LinkedListSolution:ISolutionInterface {
          return resultNode
      }
 
-    private fun <T> reverseNode(head: Node<T>?):Node<T>?{
+    private fun <T> reverseNode(head: ListNode<T>?):ListNode<T>?{
         /*方法一，用stack的特性，存储链表的数据，然后反转*/
         /**
          * 如果链表为空时，代码是否能正常工作？
@@ -66,16 +66,16 @@ class LinkedListSolution:ISolutionInterface {
         head?.let {p->
             p.next?.let {
                 var stack = Stack<T>()
-                var temp:Node<T>? = head
+                var temp:ListNode<T>? = head
                 while (temp!=null){
-                    stack.push(temp!!.value)
+                    stack.push(temp!!.`val`)
                     temp = temp!!.next
                 }
 
-                var newHead = Node<T>(stack.pop())
+                var newHead = ListNode<T>(stack.pop())
                 var temp2 = newHead
                 while (!stack.isEmpty()){
-                    var e = Node(stack.pop())
+                    var e = ListNode(stack.pop())
                     temp2.next = e
                     e.next = null
                     temp2 = e
@@ -93,7 +93,7 @@ class LinkedListSolution:ISolutionInterface {
     /**
      * 快慢指针法，1个慢指针，一个快指针，如果在移动过程中2者想叫，则存在环。
      */
-    private  fun <T> checkCycle(header:Node<T>?){
+    private  fun <T> checkCycle(header:ListNode<T>?){
 
     }
 }

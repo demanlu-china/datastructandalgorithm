@@ -1,5 +1,6 @@
 package com.demanmath.dataandalgorithm
 
+import com.demanmath.dataandalgorithm.session.Session22
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,5 +14,11 @@ open class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun run(){
+        var session22 = Session22()
+        session22.run()
     }
 }
